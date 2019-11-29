@@ -1,0 +1,21 @@
+RewriteEngine On
+
+RewriteRule ^.{0}$ index.php
+RewriteRule ^clients$ views/clients/liste.php
+RewriteRule ^comptes$ views/comptes/liste.php
+RewriteRule ^comptes/edit$ views/comptes/edit.php
+RewriteRule ^clientController$ controllers/clientController.php
+RewriteRule ^compteController$ controllers/compteController.php
+
+RewriteRule ^clientController/edit/([0-9]+)$ views/clients/edit.php?id=$1
+RewriteRule ^clientController/update$ controllers/clientController.php?update
+
+RewriteRule ^clientController/delete/([0-9]+)$ controllers/clientController.php?delete=$1
+RewriteRule ^clientController/listeCompte/([0-9]+)$ views/clients/listeComptesClient.php?id=$1
+RewriteRule ^compteController/newCompte/([0-9]+)$ views/comptes/newCompte.php?id=$1
+
+RewriteRule ^compteController/add$ controllers/compteController.php?add
+RewriteRule ^compteController/new$ controllers/compteController.php?new
+
+
+
